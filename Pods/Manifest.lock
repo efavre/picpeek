@@ -1,0 +1,16 @@
+PODS:
+  - AFNetworking (1.2.1)
+  - JSONKit (1.5pre)
+  - KeychainItemWrapper (1.2)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.0)
+  - JSONKit (~> 1.4)
+  - KeychainItemWrapper
+
+SPEC CHECKSUMS:
+  AFNetworking: 616da0028916ce296f5c3cef74e5552eb4e10e13
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  KeychainItemWrapper: f537d5bec950b2ab815c80cef9bf4e30a1084dc8
+
+COCOAPODS: 0.19.1
