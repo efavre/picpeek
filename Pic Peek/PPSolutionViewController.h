@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface PPSolutionViewController : UIViewController<UITextFieldDelegate>
+@interface PPSolutionViewController : UIViewController<UITextFieldDelegate,ADBannerViewDelegate>
+{
+    bool bannerIsVisible;
+}
 
 @property(nonatomic, strong) IBOutlet UITextField *propositionTextField;
 @property(nonatomic, strong) IBOutlet UITextField *nicknameTextField;

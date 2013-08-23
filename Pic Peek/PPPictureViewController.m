@@ -27,6 +27,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        bannerIsVisible = NO;
         self.title = NSLocalizedString(@"Peek?", @"Peek?");
         self.tabBarItem.image = [UIImage imageNamed:@"camera"];
     }
@@ -109,6 +110,32 @@
         NSLog(@"ERROR : %@", error);
     }];
 
+}
+
+/**************************************************************************************************/
+#pragma mark - AdBannerViewDelegate
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!bannerIsVisible)
+    {
+		NSLog(@"bannerViewDidLoadAd");
+        [UIView animateWithDuration:0.5 animations:^{
+            banner.frame = CGRectOffset(banner.frame, 0, -50);
+        }];
+        bannerIsVisible = YES;
+    }
+}
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+	if (bannerIsVisible)
+	{
+		NSLog(@"bannerView:didFailToReceiveAdWithError:");
+        [UIView animateWithDuration:0.5 animations:^{
+            banner.frame = CGRectOffset(banner.frame, 0, 50);
+        }];
+		bannerIsVisible = NO;
+	}
+    
 }
 
 @end

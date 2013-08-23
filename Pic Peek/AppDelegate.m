@@ -22,11 +22,11 @@
     // Override point for customization after application launch.
     UIViewController *viewController1, *viewController2;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[PPPictureViewController alloc] initWithNibName:@"PPFirstViewController_iPhone" bundle:nil];
-        viewController2 = [[PPSolutionViewController alloc] initWithNibName:@"PPSecondViewController_iPhone" bundle:nil];
+        viewController1 = [[PPPictureViewController alloc] initWithNibName:@"PPPictureViewController_iPhone" bundle:nil];
+        viewController2 = [[PPSolutionViewController alloc] initWithNibName:@"PPSolutionViewController_iPhone" bundle:nil];
     } else {
-        viewController1 = [[PPPictureViewController alloc] initWithNibName:@"PPFirstViewController_iPad" bundle:nil];
-        viewController2 = [[PPSolutionViewController alloc] initWithNibName:@"PPSecondViewController_iPad" bundle:nil];
+        viewController1 = [[PPPictureViewController alloc] initWithNibName:@"PPPictureViewController_iPhone" bundle:nil];
+        viewController2 = [[PPSolutionViewController alloc] initWithNibName:@"PPSolutionViewController_iPhone" bundle:nil];
     }
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1, viewController2];

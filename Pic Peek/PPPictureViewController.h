@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface PPPictureViewController : UIViewController
+@interface PPPictureViewController : UIViewController <ADBannerViewDelegate>
+{
+    bool bannerIsVisible;
+}
 
 @property (nonatomic, strong) IBOutlet UIImageView *pictureImageView;
 @property (nonatomic, strong) IBOutlet UILabel *labelCategory;
